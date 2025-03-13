@@ -1,143 +1,83 @@
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Dexus WebKit For PS4 900</title>
-<style type="text/css">
-body {
-  background-color: #1A1920;  
-  background-repeat:no-repeat;
-  height:95%;
- }
- button {
-            background:rgba(0,0,0,0.5);
-		    box-shadow: 0 5px 20px 0 white;
-            border: 2px solid black;
-            border-radius: 10px;
-            width: 170px;
-            height: 43px;            
-            text-align: center;
-            padding: 6px;
-            margin: 6px;
-}
-button:hover {
-            box-shadow: 0 5px 50px 0 white;
-            background-color: #0F0F53;
-            color: white;
-            border-radius: 10px;
-}
- .content {
-  width:80%;
-  margin-left:7.5%;
-  background:rgba(0,0,0,0.5);
-  color:white;
-  margin-top:1%;
-  font-size:25px;
-  text-align:center;
-  border-radius:30px;
-  padding:20px;
-  line-height:40px;
- }
- .title {
-  font-size:40px;
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-weight:bolder;
-  margin-bottom:10px;
- }
- .yellow {
-  color:yellow;
- }
- .hue {
-  color:yellow;
-  padding:10px;
-  border-radius:10px;
-  animation:hue 5s linear infinite;
-  -webkit-animation: hue 5s linear infinite;
-  box-shadow: 0px 0px 50px yellow;
-  color:white;
-  background:rgba(255,255,0,0.4);
- }
- .hue:hover{
-  color:yellow;
-  background:transparent;
- }
- @keyframes hue{
- 0%{
- filter:hue-rotate(0deg);
- -webkit-filter:hue-rotate(0deg);
- }
- 10%{
- box-shadow: 0px 1px 50px yellow;
- }
- 20%{
- box-shadow: 1px 1px 50px yellow;
- }
- 30%{
- box-shadow: 1px 0px 50px yellow;
- }
- 40%{
-  box-shadow: 1px -1px 50px yellow;
- }
- 50%{
- box-shadow: 0px -1px 50px yellow;
- }
- 60%{
- box-shadow: -1px -1px 50px yellow;
- }
- 70%{
- box-shadow: -1px 0px 50px yellow;
- }
- 80%{
- box-shadow: -1px 1px 50px yellow;
- }
- 90%{
- box-shadow: 0px 1px 50px yellow;
- }
- 100%{
- filter:hue-rotate(360deg);
- -webkit-filter:hue-rotate(360deg);
- }
- }
- .text {
-  padding-bottom:50px;
- }
-  .back {
-   font-size:25px;
-   margin-top:10px;
-   display:block;
-   line-height:55px;
-   width:20%;
-   text-decoration:none;
-   height:50px;
-   background:white;
-   color:black;
-   border-radius:15px;
-  }
-  .back:hover{
-   border:2px solid white;
-   background:transparent;
-   box-sizing:border-box;
-   color:white;
-  }
-  .pointer {cursor: pointer;}
+<title>Dexus WebKit For PS4 9.00</title>
+<style>
+    body {
+        background-color: #181818;
+        font-family: Arial, sans-serif;
+        color: white;
+        text-align: center;
+    }
+    .container {
+        margin-top: 50px;
+    }
+    h1 {
+        color: #FFD700;
+        font-size: 28px;
+        text-shadow: 2px 2px 8px rgba(255, 215, 0, 0.5);
+    }
+    #status {
+        font-size: 20px;
+        color: #FFD700;
+        margin-bottom: 20px;
+        min-height: 25px;
+    }
+    .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    .button {
+        background: linear-gradient(135deg, #222, #444);
+        border: 2px solid #FFD700;
+        border-radius: 12px;
+        padding: 15px 20px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #FFD700;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        transition: all 0.3s ease-in-out;
+    }
+    .button:hover {
+        background: #FFD700;
+        color: #181818;
+        transform: scale(1.05);
+        box-shadow: 0 4px 25px rgba(255, 215, 0, 0.6);
+    }
+    .footer {
+        margin-top: 40px;
+        font-size: 18px;
+        color: #FFD700;
+    }
+    .footer span {
+        background: rgba(255, 215, 0, 0.2);
+        padding: 5px 10px;
+        border-radius: 8px;
+    }
 </style>
-
+<script>
+    function updateStatus(text) {
+        document.getElementById("status").textContent = text;
+    }
+</script>
 </head>
-<body class="bg-darker">
-<div id="container"  style="">
-<h1 style='font-size:25px;text-align:center;color:yellow;'>Bienvenue sur Dexus WebKit for PS4 9.00 !</h1>
-<h1 id=msgs2 style='font-size:25px;text-align:center;color:white;'>Status</h1>
-<div style="text-align:center"  id="MyItems">
-<a href="900New/index.html"><button style='font-size:22px;text-align:center;color:green' class="pointer" onMouseOver="msgs2.innerHTML='Dexus Host Auto Exploit Compressed + New Webkit PSFree Version 9.00 fw'"; onmouseout="msgs2.innerHTML='Status'"  type="button"><B>9.00 New</B></button></a>
-<a href="G900/index.html"><button style='font-size:22px;text-align:center;color:yellow' class="pointer" onMouseOver="msgs2.innerHTML='Dexus Host auto Exploit + Goldhen V2.4b16,2 + New Webkit PSFree For 9.00'"; onmouseout="msgs2.innerHTML='Status'"  type="button"><B>Goldhen900</B></button></a>
-<a href="restore/index.html"><button style='width: 300px;height: 50px;font-size:22px;text-align:center;color:yellow' class="pointer" onMouseOver="msgs2.innerHTML='Restore Hosts to Users Guide by Dexus For 9.00'"; onmouseout="msgs2.innerHTML='Status'"  type="button"><B>Restore Host</B></button></a>
-<a href="restore2/index.html"><button style='width: 300px;height: 75px;font-size:22px;text-align:center;color:yellow' class="pointer" onMouseOver="msgs2.innerHTML='Restore PS4Trainer Offline to Users Guide by Dexus For 9.00'"; onmouseout="msgs2.innerHTML='Status'"  type="button"><B>Restore PS4Trainer Offline</B></button></a>
-<div class="content" >
- 	<div class="text" >
- 	 <br><span class="yellow" >Designed, Ported and Compiled by :</span >&nbsp;&nbsp; <span class="hue" >DexusModding</span>
- 	</div>
- </div>
-</div>
+<body>
+    <div class="container">
+        <h1>Bienvenue sur Dexus WebKit for PS4 9.00 !</h1>
+        <h2 id="status">Status</h2>
+        <div class="buttons">
+            <a href="900New/index.html" class="button" onmouseover="updateStatus('Lancer le WebKit 9.00')" onmouseout="updateStatus('Status')">9.00 Webkit</a>
+            <a href="G900/index.html" class="button" onmouseover="updateStatus('Activer Goldhen900')" onmouseout="updateStatus('Status')">Goldhen900</a>
+            <!-- restore/index.html --><a href="#" class="button" onmouseover="updateStatus('Restaurer l\'hôte')" onmouseout="updateStatus('Status')">Restore Host [ON UPDATE]</a>
+            <!-- restore2/index.html --><a href="#" class="button" onmouseover="updateStatus('Restaurer PS4Trainer')" onmouseout="updateStatus('Status')">Restore PS4Trainer Offline [ON UPDATE]</a>
+        </div>
+        <div class="footer">
+            <p>Designed, Ported and Compiled by: <span>DexusModding</span></p>
+        </div>
+    </div>
 </body>
 </html>
