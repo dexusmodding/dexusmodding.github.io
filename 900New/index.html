@@ -1,63 +1,221 @@
 <html manifest="Cache.manifest">
 <head>
 <style>
-    body {
-        background-color: #181818;
-        font-family: Arial, sans-serif;
-        color: white;
-        text-align: center;
-    }
-    .container {
-        margin-top: 50px;
-    }
-    h1 {
-        color: #FFD700;
-        font-size: 28px;
-        text-shadow: 2px 2px 8px rgba(255, 215, 0, 0.5);
-    }
-    #progress {
-        font-size: 20px;
-        color: #FFD700;
-        margin-bottom: 20px;
-        min-height: 25px;
-    }
-    .buttons {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        flex-wrap: wrap;
-    }
-    .button {
-        background: linear-gradient(135deg, #222, #444);
-        border: 2px solid #FFD700;
-        border-radius: 12px;
-        padding: 15px 20px;
-        font-size: 20px;
-        font-weight: bold;
-        color: #FFD700;
-        text-decoration: none;
-        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-        transition: all 0.3s ease-in-out;
-    }
-    .button:hover {
-        background: #FFD700;
-        color: #181818;
-        transform: scale(1.05);
-        box-shadow: 0 4px 25px rgba(255, 215, 0, 0.6);
-    }
-    .footer {
-        margin-top: 40px;
-        font-size: 18px;
-        color: #FFD700;
-    }
-    .footer span {
-        background: rgba(255, 215, 0, 0.2);
-        padding: 5px 10px;
-        border-radius: 8px;
-    }
-</style>	
+    html, body{
+margin:auto;
+font-family:sans-serif;
+font-size:20px;
+font-weight:lighter;
+text-align: center;
+color:#FFFFFF;
+background-size:cover;
+overflow: hidden;
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+ .content {
+  width:90%;
+  height:15%;
+  margin-left:3.5%;
+  background:rgba(0,0,0,0.5);
+  color:white;
+  margin-top:0%;
+  font-size:25px;
+  text-align:center;
+  border-radius:30px;
+  padding:20px;
+  line-height:12px;
+  position:absolute;bottom:0px;
+ }
+ .title {
+  font-size:40px;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-weight:bolder;
+  margin-bottom:10px;
+ }
+ .yellow {
+  color:yellow;
+ }
+ .hue {
+  color:yellow;
+  padding:10px;
+  border-radius:10px;
+  animation:hue 5s linear infinite;
+  -webkit-animation: hue 5s linear infinite;
+  box-shadow: 0px 0px 50px yellow;
+  color:white;
+  background:rgba(255,255,0,0.4);
+ }
+ .hue:hover{
+  color:yellow;
+  background:transparent;
+ }
+ @keyframes hue{
+ 0%{
+ filter:hue-rotate(0deg);
+ -webkit-filter:hue-rotate(0deg);
+ }
+ 10%{
+ box-shadow: 0px 1px 50px yellow;
+ }
+ 20%{
+ box-shadow: 1px 1px 50px yellow;
+ }
+ 30%{
+ box-shadow: 1px 0px 50px yellow;
+ }
+ 40%{
+  box-shadow: 1px -1px 50px yellow;
+ }
+ 50%{
+ box-shadow: 0px -1px 50px yellow;
+ }
+ 60%{
+ box-shadow: -1px -1px 50px yellow;
+ }
+ 70%{
+ box-shadow: -1px 0px 50px yellow;
+ }
+ 80%{
+ box-shadow: -1px 1px 50px yellow;
+ }
+ 90%{
+ box-shadow: 0px 1px 50px yellow;
+ }
+ 100%{
+ filter:hue-rotate(360deg);
+ -webkit-filter:hue-rotate(360deg);
+ }
+ }
+ .text {
+  padding-bottom:50px;
+ }
+  .back {
+   font-size:25px;
+   margin-top:10px;
+   display:block;
+   line-height:55px;
+   width:20%;
+   text-decoration:none;
+   height:50px;
+   background:white;
+   color:black;
+   border-radius:15px;
+  }
+  .back:hover{
+   border:2px solid white;
+   background:transparent;
+   box-sizing:border-box;
+   color:white;
+  }
+ #psip {
+  text-align: center;
+  margin-left: 38%;
+  margin-right: auto;
+  width:15%;
+  display:flex;
+  position: absolute;
+  
+  background: rgba(0, 0, 0, 0.500);
+  border-radius: 2em;
+  border: none;
+  padding: 0.8em;
+  
+  color: #ffffff;
+  padding-left: 1.5em;
+  
+  outline: none;
+  box-shadow: 0 4px 6px -5px hsl(0, 0%, 40%), inset 0px 4px 6px -5px hsl(0, 0%, 2%);
+  backdrop-filter: blur(5px);
+}
+/* Modal Content */
+.modal-content {
+  font-family: BFARNAZ;
+  font-size: 18px;
+  position: relative;
+  background-color: #dddddd;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+button {
+            background:rgba(0,0,0,0.5);
+			box-shadow: 0 5px 20px 0 white;
+            border: 2px solid black;
+            border-radius: 10px;
+            width: 200px;
+            height: 43px;            
+            text-align: center;
+}
+button:hover {
+            box-shadow: 0 5px 50px 0 white;
+            color: white;
+            border-radius: 10px;
+			background-color: #0F0F53;
+}
+
+hr {
+padding:0;
+margin:0;
+opacity:0.7;
+}
+
+#progress {
+ font-weight:bold;
+ text-shadow: 4px 4px 4px black;
+
+ font-size:17px;
+}
+.pointer {cursor: pointer;}
+
+h1 {
+text-shadow: 0.1em 0.1em 0.2em black;
+font-size: 25px;
+text-align: center;
+color: white;
+}
+
+.TextCaption{
+display: block;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+a img {
+    display: inline-block;  text-decoration: none;
+}
+
+a {
+    display: inline-block;  text-decoration: none;
+}
+
+a:hover img, a:hover .TextCaption{
+transform: scale(1.1)
+}
+
+    </style>
 <meta charset="utf-8">
-<title>Dexus Host Auto Exploit Compressed + New Webkit Version 9.00 fw</title>
+<title>Karo Host Auto Exploit Compressed + New Webkit Version 9.00 fw</title>
 <script>
 if (window.applicationCache.status=='0'){window.location.replace("cache.html");}
 </script>
@@ -683,7 +841,7 @@ Tools.style.display = "none";
 </script>
 </head>
 <body style='background-color:#1A1920'>
-<h1 style='text-shadow: 4px 4px 4px black;font-size:30px;text-align:center;text-shadow: 4px 4px 4px black;color:yellow;margin-top:1%;'>Dexus Host Auto Exploit Compressed + New Webkit Version 9.00 fw</h1>
+<h1 style='text-shadow: 4px 4px 4px black;font-size:30px;text-align:center;text-shadow: 4px 4px 4px black;color:yellow;margin-top:1%;'>Karo Host Auto Exploit Compressed + New Webkit Version 9.00 fw</h1>
 <h1 id=progress style='font-size:25px;text-align:center;text-shadow: 4px 4px 4px black;color:white;'>Jailbreaking... Wait</h1>
 <div id=all style="text-align:center;display:none">
 <button id="button-Payload" onMouseOver="progress.innerHTML='GoldHen v2.1.2 by SISTR0 for PS4 9.00 Fw'" onmouseout="progress.innerHTML='Status'" type="button" onclick="goldhen212()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:#CEC52A' > GoldHenV2.1.2</button>
@@ -715,11 +873,40 @@ Tools.style.display = "none";
 <button style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;width: 230px;color:white' class="pointer" onMouseOver="progress.innerHTML='All Linux payloads'" onmouseout="progress.innerHTML='Status'" onclick="alllinux(); return false"> Linux Group </button>
 <button style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;width: 230px;color:white' class="pointer" onMouseOver="progress.innerHTML='All Tools payloads'" onmouseout="progress.innerHTML='Status'" onclick="alltools(); return false"> Tools Group </button>
 <br><br>
+<button style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;width: 350px;height: 45px;color:white' class="pointer" onMouseOver="progress.innerHTML='All Mods Gtav & RDR2 payloads'" onmouseout="progress.innerHTML='Status'" onclick="allmods(); return false"> GTAV & RDR2 Mods Group </button>
 <button id="button-Payload" onMouseOver="progress.innerHTML='Set the desired temperature that the PS4 fan starts'" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_fan()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' > Fan Control </button><select style='font-size:20px;text-align:center;color:black' id="tempC"></select><a style='font-size:17px;text-align:center;color:white;'>&#176;C</a>
 <br>
 </div>
+<div id=gtav style="text-align:center;display:none">
+<button style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' class="pointer" onMouseOver="progress.innerHTML='back to base menu'" onmouseout="progress.innerHTML='Karo Host 5.05 fw'" onclick="backall(); return false"> Back to Menu </button>
+<br><br>
+<button id="button-Payload" onMouseOver="progress.innerHTML='GTAV ArabicGuy 1.00 by Karo for 900 L1+R1'" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_GTAAr0()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' > GTAV A100 </button>
+<button id="button-Payload" onMouseOver="progress.innerHTML='GTAV ArabicGuy 1.27 by rfoodxmodz  fixed by Karo for 900 ==> + [] '" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_GTAAr1()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' > GTAV A127 </button>
+<button id="button-Payload" onMouseOver="progress.innerHTML='GTAV ArabicGuy 1.32 by rfoodxmodz fixed by Karo for 900 '" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_GTAAr2()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' > GTAV A132 </button>
+<button id="button-Payload" onMouseOver="progress.innerHTML='GTAV ArabicGuy 1.33 by rfoodxmodz for 900 '" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_GTAAr3()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' > GTAV A133 </button>
+<br><br>
+<button id="button-Payload" onMouseOver="progress.innerHTML='GTAV BeefQueefMod 1.33 by GraFfix_221211 for 900 '" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_GTABQ()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' > GTAV BQ </button>
+<button id="button-Payload" onMouseOver="progress.innerHTML='GTAV BeefQueefMod 1.34 by GraFfix_221211 for 900 '" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_GTABQ2()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' > GTAV BQ2 </button>
+<button id="button-Payload" onMouseOver="progress.innerHTML='GTAV BeefQueefMod 1.38 by GraFfix_221211 for 900 '" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_GTABQ3()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' > GTAV BQ3 </button>
+<br><br>
+<button id="button-Payload" onMouseOver="progress.innerHTML='GTAV Menu-Base 1.27 Ported by Karo for 900 ==> + []'" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_GTAVMB()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' > GTAV MB127 </button>
+<button id="button-Payload" onMouseOver="progress.innerHTML='GTAV LTS 1.27 Ported by Karo for 900 ==> + []'" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_GTAVLTS()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' > GTAV LTS127 </button>
+<button id="button-Payload" onMouseOver="progress.innerHTML='GTAV Expulsion Mode Menu 1.35 by LushModz for 900 '" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_expul()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' > GTAV Ex135 </button>
+<button id="button-Payload" onMouseOver="progress.innerHTML='GTAV Expulsion Mode Menu 1.38 V4.0 by LushModz for 900 '" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_expul2()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' > GTAV Ex138 </button>
+<br><br>
+<button id="button-Payload" onMouseOver="progress.innerHTML='GTAV Expulsion Mod Menu 1.32 v1.1 by x_WildeModz_x for 900 '" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_Wilde32()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' > GTAV W132 </button>
+<button id="button-Payload" onMouseOver="progress.innerHTML='GTAV Expulsion Mod Menu 1.33 v1.1 by x_WildeModz_x for 900 '" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_Wilde33()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' > GTAV W133 </button>
+<button id="button-Payload" onMouseOver="progress.innerHTML='GTAV Expulsion Mod Menu 1.38 v1.7 by x_WildeModz_x for 900 '" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_Wilde38()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' > GTAV W138 </button>
+<button id="button-Payload" onMouseOver="progress.innerHTML='GTAV Lamance Mod 1.38 v0.9 by david1337hax '" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_GTAL()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' >GTAV Lamance</button>
+<br><br>
+<button id="button-Payload" onMouseOver="progress.innerHTML='Red dead redemption 2 mod  menu 1.00 V1.3.6 by RF0oDxM0Dz (R1 + Square) '" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_Oysters100()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:red' > RDR2 V1.00 </button>
+<button id="button-Payload" onMouseOver="progress.innerHTML='Red dead redemption 2 mod  menu 1.13 V1.3.6 by RF0oDxM0Dz (R1 + Square) '" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_Oysters113()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:red' > RDR2 V1.13 </button>
+<button id="button-Payload" onMouseOver="progress.innerHTML='Red dead redemption 2 mod  menu 1.19 V1.3.6 by RF0oDxM0Dz (R1 + Square) '" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_Oysters119()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:red' > RDR2 V1.19 </button>
+<button id="button-Payload" onMouseOver="progress.innerHTML='Red dead redemption 2 mod  menu 1.24 V1.3.6 by RF0oDxM0Dz (R1 + Square) '" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_Oysters124()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:red' > RDR2 V1.24 </button>
+<button id="button-Payload" onMouseOver="progress.innerHTML='Red dead redemption 2 mod  menu 1.29 V1.3.6 by RF0oDxM0Dz (R1 + Square) '" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_Oysters129()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:red' > RDR2 V1.29 </button>
+<br><br><br></div>
 <div id=Linuxs style="text-align:center;display:none">
-<button style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' class="pointer" onMouseOver="progress.innerHTML='back to base menu'" onmouseout="progress.innerHTML='Dexus Host 5.05 fw'" onclick="backall(); return false"> Back to Menu </button>
+<button style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' class="pointer" onMouseOver="progress.innerHTML='back to base menu'" onmouseout="progress.innerHTML='Karo Host 5.05 fw'" onclick="backall(); return false"> Back to Menu </button>
 <br><br>
 <button  onMouseOver="progress.innerHTML='LinuxLoader 1gb by PSXITA'" onmouseout="progress.innerHTML='Status'" type="button" onclick="Linux1N()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white'>Linux PSXITA 1GB</button>
 <button  onMouseOver="progress.innerHTML='LinuxLoader 2gb by PSXITA'" onmouseout="progress.innerHTML='Status'" type="button" onclick="Linux2N()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white'>Linux PSXITA 2GB</button>
@@ -737,7 +924,7 @@ Tools.style.display = "none";
 <br><br><br>
 </div>
 <div id=Tools style="text-align:center;display:none">
-<button style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' class="pointer" onMouseOver="progress.innerHTML='back to base menu'" onmouseout="progress.innerHTML='Dexus Host 5.05 fw'" onclick="backall(); return false"> Back to Menu </button>
+<button style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' class="pointer" onMouseOver="progress.innerHTML='back to base menu'" onmouseout="progress.innerHTML='Karo Host 5.05 fw'" onclick="backall(); return false"> Back to Menu </button>
 <br><br>
 <button id="button-Payload" onMouseOver="progress.innerHTML='Create a backup of important database files ans User Data'" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_BackupDB()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' > DB Backup </button>
 <button id="button-Payload" onMouseOver="progress.innerHTML='Restore a backup of the database files and User Data'" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_RestoreDB()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' > DB Restore </button>
@@ -749,7 +936,7 @@ Tools.style.display = "none";
 <br><br><br>
 </div>
 <div id=Dumpers style="text-align:center;display:none">
-<button style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' class="pointer" onMouseOver="progress.innerHTML='back to base menu'" onmouseout="progress.innerHTML='Dexus Host 5.05 fw'" onclick="backall(); return false"> Back to Menu </button>
+<button style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' class="pointer" onMouseOver="progress.innerHTML='back to base menu'" onmouseout="progress.innerHTML='Karo Host 5.05 fw'" onclick="backall(); return false"> Back to Menu </button>
 <br><br>
 <button id="button-Payload" onMouseOver="progress.innerHTML='PS4 PKG Backup by Kameleon'" onmouseout="progress.innerHTML='Status'" type="button" onclick="load_pkgb()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:white' > PKG Backup </button>
 <br><br>
@@ -764,7 +951,8 @@ Tools.style.display = "none";
 </div>
 <div class="content" >
  	    <div class="text" >
- 	        <br><span style="text-shadow: 4px 4px 4px black;" class="yellow" >Designed, Compiled by :</span >&nbsp;&nbsp; <span style="text-shadow: 4px 4px 4px black;" class="hue" >DexusModding</span>
+ 	        <br><span style="text-shadow: 4px 4px 4px black;" class="yellow" >Designed, Compiled by :</span >&nbsp;&nbsp; <span style="text-shadow: 4px 4px 4px black;" class="hue" >Karo Sharifi</span>
+ 	        <br><br><br><br><span style="text-shadow: 4px 4px 4px black;" class="yellow" >Super Special Thanks To :</span >&nbsp;&nbsp; <a style="font-size:30px;text-align:center;text-shadow: 4px 4px 4px black;color:white;">Sleirsgoevy , Al Azif , ChendoChap , SiSTRo ,Specter ,Abc ,Znullptr ,hippie68 ... </a>
 	    </div>
 </div>
 <script>
